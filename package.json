@@ -1,0 +1,34 @@
+{
+  "name": "meteor-react-zwitter",
+  "version": "1.0.0",
+  "description": "A very basic clone of Twitter using Meteor and ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "meteor",
+    "react",
+    "twitter",
+    "clone",
+    "zwitter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/atulmy/meteor-reactjs-zwitter"
+  },
+  "author": "Atul Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "classnames": "^2.2.5",
+    "immutability-helper": "^2.0.0",
+    "normalize.css": "^4.2.0",
+    "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-mounter": "1.2.0",
+    "react-router": "^2.8.1"
+  }
+}
