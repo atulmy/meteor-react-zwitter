@@ -35,7 +35,7 @@ class UserRegister extends React.Component {
                     alert(error.reason);
                 } else {
                     if(response.success) {
-                        //Router.go('login', { message: response.message });
+                        this.context.router.push('/login');
                     }
                 }
             });
@@ -50,7 +50,7 @@ class UserRegister extends React.Component {
 
     render() {
         return (
-            <div>
+            <section>
                 <h1>Register</h1>
 
                 <form id="form-register" onSubmit={ this.onSubmit.bind(this) }>
@@ -84,9 +84,13 @@ class UserRegister extends React.Component {
 
                     <button type="submit" className="btn btn-default">Register</button>
                 </form>
-            </div>
+            </section>
         )
     }
 }
+
+UserRegister.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 export default UserRegister;

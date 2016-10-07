@@ -26,7 +26,7 @@ class UserLogin extends React.Component {
                 console.log(error);
 
                 if(!error) {
-                    // Router.go('tweet');
+                    this.context.router.push('/tweet');
                 }
             });
         }
@@ -40,7 +40,7 @@ class UserLogin extends React.Component {
 
     render() {
         return (
-            <div>
+            <section>
                 <h1>Login</h1>
 
                 <form id="form-login" onSubmit={ this.onSubmit.bind(this) }>
@@ -74,9 +74,13 @@ class UserLogin extends React.Component {
 
                     <button type="submit" className="btn btn-default">Login</button>
                 </form>
-            </div>
+            </section>
         )
     }
 }
+
+UserLogin.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 export default UserLogin;
