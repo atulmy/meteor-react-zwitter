@@ -4,17 +4,17 @@ A very basic clone of Twitter using Meteor 1.4 and ReactJS
 ## Packages Used
 
 ### Meteor (atmospherejs)
-- accounts-password (Meteor Core Accounts)
-- aldeed:collection2 (MongoDB Schema, Schema Validations)
-- mdg:validated-method (Meteor methods in structured way)
+- **accounts-password** (Meteor Core Accounts)
+- **aldeed:collection2** (MongoDB Schema, Schema Validations)
+- **mdg:validated-method** (Meteor methods in structured way)
 - msavin:mongol (In-App MongoDB Editor for Meteor) [optional]
 
 ### Node (npm)
-- react (Core React library)
-- react-dom (React package for working with the DOM)
-- react-router (Routing library for React)
-- react-addons-pure-render-mixin (React PureRenderMixin add-on)
-- react-mounter (Mount React components to DOM easily in Meteor)
+- **react** (Core React library)
+- **react-dom** (React package for working with the DOM)
+- **react-router** (Routing library for React)
+- **react-addons-pure-render-mixin** (React PureRenderMixin add-on)
+- **react-mounter** (Mount React components to DOM easily in Meteor)
 - moment (Parse, validate, manipulate, and display dates) [optional]
 - bcrypt (A bcrypt library for NodeJS) [optional]
 
