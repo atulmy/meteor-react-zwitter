@@ -25,7 +25,7 @@ A very basic clone of Twitter using Meteor 1.4 and ReactJS
 
 ## Running
 - Install Meteor `curl https://install.meteor.com/ | sh` (if you haven't already)
-- Clone repo `git clone git@github.com/atulmy/meteor-reactjs-zwitter.git zwitter` and `cd zwitter`
+- Clone repo `git clone git@github.com:atulmy/meteor-reactjs-zwitter.git zwitter` and `cd zwitter`
 - Install NPM modules `npm install`
 - Run Meteor `meteor`
 
