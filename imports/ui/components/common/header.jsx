@@ -1,11 +1,15 @@
 // Frontend
 // imports / ui / components / header.jsx
 
+// Imports
+
+// Libraries
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Link } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
 
+// Header Component
 class Header extends React.Component {
 
     logout() {
@@ -20,20 +24,28 @@ class Header extends React.Component {
         let headerLinksHtml;
 
         if (this.props.user && typeof this.props.user._id != 'undefined') {
+            // User is logged in
+
             headerLinksHtml = (
-                <div>
+                <ul className="nav nav-pills">
+                    <li><Link to="/">Home</Link></li>
+
                     <li><Link to="/tweet">Tweet</Link></li>
 
                     <li><a href="#" onClick={ this.logout() }>Logout</a></li>
-                </div>
+                </ul>
             )
         } else {
+            // User is not logged in
+
             headerLinksHtml = (
-                <div>
+                <ul className="nav nav-pills">
+                    <li><Link to="/">Home</Link></li>
+
                     <li><Link to="/login">Login</Link></li>
 
                     <li><Link to="/register">Register</Link></li>
-                </div>
+                </ul>
             )
         }
 
@@ -45,28 +57,28 @@ class Header extends React.Component {
             <header>
                 <h1>Zwitter</h1>
 
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-
-                    { this.renderHeaderLinks() }
-                </ul>
+                { this.renderHeaderLinks() }
             </header>
         )
     }
 }
 
+// Properties
 Header.propTypes = {
     user: React.PropTypes.object
 };
 
+// Contexts
 Header.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
+// Header Container
 const HeaderContainer = createContainer(() => {
     return {
         user:  Meteor.user() ? Meteor.user() : {}
     };
 }, Header);
 
+// Finally, export the Container
 export default HeaderContainer;

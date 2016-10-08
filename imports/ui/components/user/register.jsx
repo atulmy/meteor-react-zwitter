@@ -1,17 +1,23 @@
 // Frontend
 // imports / ui / components / user / register.jsx
 
+// Imports
+// Libraries
 import React from 'react';
 
+// App
 import * as UserMethods from '../../../api/users/methods';
 
+// User Register Component
 class UserRegister extends React.Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            error: ''
         };
     }
 
@@ -29,10 +35,8 @@ class UserRegister extends React.Component {
             UserMethods.register.call(input, (error, response) => {
                 console.log('M - users.register / callback');
 
-                console.log(response);
-
                 if(error) {
-                    alert(error.reason);
+                    this.setState({ error: error.reason });
                 } else {
                     if(response.success) {
                         this.context.router.push('/login');
@@ -51,7 +55,9 @@ class UserRegister extends React.Component {
     render() {
         return (
             <section>
-                <h1>Register</h1>
+                <h2>Register</h2>
+
+                { this.state.error ? <p>{ this.state.error }</p> : '' }
 
                 <form id="form-register" onSubmit={ this.onSubmit.bind(this) }>
                     <div className="form-group">
@@ -89,8 +95,10 @@ class UserRegister extends React.Component {
     }
 }
 
+// Contexts
 UserRegister.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
+// Finally, export the Component
 export default UserRegister;

@@ -1,17 +1,21 @@
 // Frontend
 // imports / ui / components / user / login.jsx
 
+// Imports
+
+// Libraries
 import React from 'react';
 
-import * as UserMethods from '../../../api/users/methods';
-
+// User Login Component
 class UserLogin extends React.Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            error: ''
         };
     }
 
@@ -23,9 +27,9 @@ class UserLogin extends React.Component {
         if(this.state.username != '' && this.state.password != '') {
             Meteor.loginWithPassword(this.state.username, this.state.password, (error) => {
 
-                console.log(error);
-
-                if(!error) {
+                if(error) {
+                    this.setState({ error: error.reason });
+                } else {
                     this.context.router.push('/tweet');
                 }
             });
@@ -41,7 +45,9 @@ class UserLogin extends React.Component {
     render() {
         return (
             <section>
-                <h1>Login</h1>
+                <h2>Login</h2>
+
+                { this.state.error ? <p>{ this.state.error }</p> : '' }
 
                 <form id="form-login" onSubmit={ this.onSubmit.bind(this) }>
                     <div className="form-group">
@@ -79,8 +85,10 @@ class UserLogin extends React.Component {
     }
 }
 
+// Contexts
 UserLogin.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
+// Finally, export the Component
 export default UserLogin;

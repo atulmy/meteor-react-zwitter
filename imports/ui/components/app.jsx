@@ -1,11 +1,16 @@
 // Frontend
 // imports / ui / layouts / app.jsx
 
+// Imports
+
+// Libraries
 import React from 'react';
 
+// App
 import Header from '../components/common/header';
 import Footer from '../components/common/footer';
 
+// App (Layout) Component
 class App extends React.Component {
     render() {
         return (
@@ -24,4 +29,5 @@ class App extends React.Component {
     }
 }
 
+// Finally, export the Component
 export default App;

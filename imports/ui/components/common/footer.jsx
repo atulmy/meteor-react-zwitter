@@ -1,9 +1,13 @@
 // Frontend
 // imports / ui / components / footer.jsx
 
+// Imports
+
+// Libraries
 import React from 'react';
 
-export default Footer = ({ name }) => (
+// Footer Component
+export default Footer = () => (
     <footer>
         &copy; 2016 Zwitter
     </footer>

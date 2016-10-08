@@ -26,7 +26,7 @@ export const add = new ValidatedMethod({
         if(tweet != '') {
             let success = Tweet.insert({
                 tweet,
-                userId: 'b',
+                userId: Meteor.userId(),
                 createdAt: new Date()
             });
 

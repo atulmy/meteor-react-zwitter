@@ -1,11 +1,17 @@
 // Frontend
 // imports / ui / components / tweet_list.jsx
 
+// Imports
+
+// Libraries
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import moment from 'moment';
 
+// App
 import { Tweet } from '../../api/tweets/collection';
 
+// Tweets Component
 class Tweets extends React.Component {
 
     renderTweets() {
@@ -20,7 +26,7 @@ class Tweets extends React.Component {
                         </div>
 
                         <div className="panel-footer">
-                            { tweet.createdAt.toString() }
+                            { moment(tweet.createdAt).fromNow() }
                         </div>
                     </div>
                 ))
@@ -45,11 +51,13 @@ class Tweets extends React.Component {
     }
 }
 
+// Properties
 Tweets.propTypes = {
     tweetsLoaded: React.PropTypes.bool,
     tweets: React.PropTypes.array
 };
 
+// Tweets Container
 const TweetsContainer = createContainer(() => {
     const tweetsHandle = Meteor.subscribe('tweets');
     const tweetsLoaded = tweetsHandle.ready();
@@ -61,4 +69,5 @@ const TweetsContainer = createContainer(() => {
     };
 }, Tweets);
 
+// Finally, export the Container
 export default TweetsContainer;

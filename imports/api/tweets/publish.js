@@ -7,5 +7,5 @@ import { Tweet } from './collection';
 
 // All Tweets
 Meteor.publish('tweets', () => {
-    return Tweet.find();
+    return Tweet.find({}, { sort: { createdAt: -1 } });
 });
