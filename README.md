@@ -1,6 +1,8 @@
 # Meteor + ReactJS Boilerplate App - Zwitter
 A very basic clone of Twitter using Meteor 1.4 and ReactJS
 
+Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
+
 ## Packages Used
 
 ### Meteor (atmospherejs)
