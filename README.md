@@ -10,6 +10,7 @@ Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
 - **aldeed:collection2** (MongoDB Schema, Schema Validations)
 - **mdg:validated-method** (Meteor methods in structured way)
 - msavin:mongol (In-App MongoDB Editor for Meteor) [optional]
+- npm-bcrypt [optional]
 
 ### Node (npm)
 - **react** (Core React library)
@@ -18,7 +19,6 @@ Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
 - **react-addons-pure-render-mixin** (React PureRenderMixin add-on)
 - **react-mounter** (Mount React components to DOM easily in Meteor)
 - moment (Parse, validate, manipulate, and display dates) [optional]
-- bcrypt (A bcrypt library for NodeJS) [optional]
 
 ## Features
 - List all tweets
