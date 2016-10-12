@@ -5,6 +5,7 @@
 
 // Libraries
 import React from 'react';
+import ReactHelmet from 'react-helmet';
 
 // App
 import * as TweetMethods from '../../api/tweets/methods';
@@ -56,6 +57,15 @@ class Tweet extends React.Component {
     render() {
         return (
             <section>
+                <ReactHelmet
+                    title="My Title"
+                    titleTemplate="MySite.com - %s"
+                    meta={[
+                        {"name": "description", "content": "Helmet application"},
+                        {"property": "og:type", "content": "article"}
+                    ]}
+                />
+
                 <h2>Tweet to the world</h2>
 
                 { this.state.error ? <p>{ this.state.error }</p> : '' }

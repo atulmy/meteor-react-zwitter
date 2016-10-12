@@ -23,4 +23,4 @@ aldeed:collection2
 mdg:validated-method
 react-meteor-data
 msavin:mongol
-npm-bcrypt@0.8.7
+reactrouter:react-router-ssr

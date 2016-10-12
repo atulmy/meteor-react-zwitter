@@ -20,11 +20,12 @@
   "author": "Atul Yadav",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "moment": "^2.15.1",
     "react": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-mounter": "1.2.0",
-    "react-router": "^2.8.1",
-    "react-addons-pure-render-mixin": "^15.3.2"
+    "react-router": "^2.8.1"
   }
 }
