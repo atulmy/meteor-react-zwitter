@@ -18,6 +18,7 @@ Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
 - **react-router** (Routing library for React)
 - **react-addons-pure-render-mixin** (React PureRenderMixin add-on)
 - **react-mounter** (Mount React components to DOM easily in Meteor)
+- **react-helmet** (A document head manager for React)
 - moment (Parse, validate, manipulate, and display dates) [optional]
 - bcrypt [optional]
 
