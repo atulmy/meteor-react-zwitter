@@ -25,6 +25,7 @@ Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
 - List all tweets
 - Login / Register
 - Post a tweet (after logging in)
+- Server Side Rendering
 
 ## Running
 - Install Meteor `curl https://install.meteor.com/ | sh` (if you haven't already)
