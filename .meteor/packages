@@ -22,5 +22,6 @@ accounts-password@1.3.0
 aldeed:collection2
 mdg:validated-method
 react-meteor-data
-msavin:mongol
 reactrouter:react-router-ssr
+msavin:mongol
+npm-bcrypt@0.8.7
