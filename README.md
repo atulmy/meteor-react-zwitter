@@ -1,22 +1,24 @@
 # Meteor + ReactJS Boilerplate App - Zwitter
 A very basic clone of Twitter using Meteor 1.4 and ReactJS
 
+Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
+
 ## Packages Used
 
 ### Meteor (atmospherejs)
-- accounts-password (Meteor Core Accounts)
-- aldeed:collection2 (MongoDB Schema, Schema Validations)
-- mdg:validated-method (Meteor methods in structured way)
+- **accounts-password** (Meteor Core Accounts)
+- **aldeed:collection2** (MongoDB Schema, Schema Validations)
+- **mdg:validated-method** (Meteor methods in structured way)
 - msavin:mongol (In-App MongoDB Editor for Meteor) [optional]
+- npm-bcrypt [optional]
 
 ### Node (npm)
-- react (Core React library)
-- react-dom (React package for working with the DOM)
-- react-router (Routing library for React)
-- react-addons-pure-render-mixin (React PureRenderMixin add-on)
-- react-mounter (Mount React components to DOM easily in Meteor)
+- **react** (Core React library)
+- **react-dom** (React package for working with the DOM)
+- **react-router** (Routing library for React)
+- **react-addons-pure-render-mixin** (React PureRenderMixin add-on)
+- **react-mounter** (Mount React components to DOM easily in Meteor)
 - moment (Parse, validate, manipulate, and display dates) [optional]
-- bcrypt (A bcrypt library for NodeJS) [optional]
 
 ## Features
 - List all tweets
@@ -25,7 +27,7 @@ A very basic clone of Twitter using Meteor 1.4 and ReactJS
 
 ## Running
 - Install Meteor `curl https://install.meteor.com/ | sh` (if you haven't already)
-- Clone repo `git clone git@github.com/atulmy/meteor-reactjs-zwitter.git zwitter` and `cd zwitter`
+- Clone repo `git clone git@github.com:atulmy/meteor-reactjs-zwitter.git zwitter` and `cd zwitter`
 - Install NPM modules `npm install`
 - Run Meteor `meteor`
 
