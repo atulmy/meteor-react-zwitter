@@ -9,6 +9,7 @@ Demo: http://meteor-reactjs-zwitter.demo.atulmy.com/
 - **accounts-password** (Meteor Core Accounts)
 - **aldeed:collection2** (MongoDB Schema, Schema Validations)
 - **mdg:validated-method** (Meteor methods in structured way)
+- **reactrouter:react-router-ssr** (React Server Side Rendering)
 - msavin:mongol (In-App MongoDB Editor for Meteor) [optional]
 - npm-bcrypt [optional]
 
