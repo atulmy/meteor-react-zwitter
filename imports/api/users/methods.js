@@ -1,6 +1,5 @@
-// Shared
-// imports / api / users / methods.js
-
+// Imports
+// Libraries
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Accounts } from 'meteor/accounts-base';

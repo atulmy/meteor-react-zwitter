@@ -1,9 +1,9 @@
-// Shared
-// imports / api / tweets / methods.js
-
+// Imports
+// Libraries
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
+// App
 import { Tweet } from './collection';
 
 export const add = new ValidatedMethod({

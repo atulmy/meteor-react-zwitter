@@ -1,10 +1,7 @@
-// Frontend
-// imports / ui / components / user / login.jsx
-
 // Imports
-
 // Libraries
 import React from 'react';
+import ReactHelmet from 'react-helmet';
 
 // User Login Component
 class UserLogin extends React.Component {
@@ -15,6 +12,7 @@ class UserLogin extends React.Component {
         this.state = {
             username: '',
             password: '',
+            isLoading: false,
             error: ''
         };
     }
@@ -24,8 +22,13 @@ class UserLogin extends React.Component {
 
         console.log('E - submit #form-login');
 
+        this.setState({ isLoading: true });
+
         if(this.state.username != '' && this.state.password != '') {
             Meteor.loginWithPassword(this.state.username, this.state.password, (error) => {
+                console.log('M - loginWithPassword / callback');
+
+                this.setState({ isLoading: false });
 
                 if(error) {
                     this.setState({ error: error.reason });
@@ -33,6 +36,8 @@ class UserLogin extends React.Component {
                     this.context.router.push('/tweet');
                 }
             });
+        } else {
+            this.setState({ isLoading: false, error: 'Please provide username and password.' });
         }
     }
 
@@ -45,9 +50,13 @@ class UserLogin extends React.Component {
     render() {
         return (
             <section>
+                <ReactHelmet
+                    title="Login - Zwitter"
+                />
+
                 <h2>Login</h2>
 
-                { this.state.error ? <p>{ this.state.error }</p> : '' }
+                { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
 
                 <form id="form-login" onSubmit={ this.onSubmit.bind(this) }>
                     <div className="form-group">
@@ -78,7 +87,7 @@ class UserLogin extends React.Component {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-default">Login</button>
+                    <button type="submit" className="btn btn-default" disabled={ this.state.isLoading }>Login</button>
                 </form>
             </section>
         )

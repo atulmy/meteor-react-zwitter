@@ -1,9 +1,7 @@
-// Frontend
-// imports / ui / components / user / register.jsx
-
 // Imports
 // Libraries
 import React from 'react';
+import ReactHelmet from 'react-helmet';
 
 // App
 import * as UserMethods from '../../../api/users/methods';
@@ -17,6 +15,7 @@ class UserRegister extends React.Component {
         this.state = {
             username: '',
             password: '',
+            isLoading: false,
             error: ''
         };
     }
@@ -25,6 +24,8 @@ class UserRegister extends React.Component {
         event.preventDefault();
 
         console.log('E - submit #form-register');
+
+        this.setState({ isLoading: true });
 
         let input = {};
         input.username = this.state.username;
@@ -35,6 +36,8 @@ class UserRegister extends React.Component {
             UserMethods.register.call(input, (error, response) => {
                 console.log('M - users.register / callback');
 
+                this.setState({ isLoading: false });
+
                 if(error) {
                     this.setState({ error: error.reason });
                 } else {
@@ -43,6 +46,8 @@ class UserRegister extends React.Component {
                     }
                 }
             });
+        } else {
+            this.setState({ isLoading: false, error: 'Please provide username and password.' });
         }
     }
 
@@ -55,9 +60,13 @@ class UserRegister extends React.Component {
     render() {
         return (
             <section>
+                <ReactHelmet
+                    title="Register - Zwitter"
+                />
+
                 <h2>Register</h2>
 
-                { this.state.error ? <p>{ this.state.error }</p> : '' }
+                { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
 
                 <form id="form-register" onSubmit={ this.onSubmit.bind(this) }>
                     <div className="form-group">
@@ -88,7 +97,7 @@ class UserRegister extends React.Component {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-default">Register</button>
+                    <button type="submit" className="btn btn-default" disabled={ this.state.isLoading }>Register</button>
                 </form>
             </section>
         )

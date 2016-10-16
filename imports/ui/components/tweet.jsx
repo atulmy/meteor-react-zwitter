@@ -1,8 +1,4 @@
-// Frontend
-// imports / ui / components / tweet_list.jsx
-
 // Imports
-
 // Libraries
 import React from 'react';
 import ReactHelmet from 'react-helmet';
@@ -18,6 +14,7 @@ class Tweet extends React.Component {
 
         this.state = {
             tweet: '',
+            isLoading: false,
             error: ''
         };
     }
@@ -27,6 +24,8 @@ class Tweet extends React.Component {
 
         console.log('E - submit #form-tweet');
 
+        this.setState({ isLoading: true });
+
         let input = {};
         input.tweet = this.state.tweet;
         console.log(input);
@@ -34,6 +33,8 @@ class Tweet extends React.Component {
         if(input.tweet != '') {
             TweetMethods.add.call(input, (error, response) => {
                 console.log('M - tweet.add / callback');
+
+                this.setState({ isLoading: false });
 
                 if(error) {
                     this.setState({ error: error.reason });
@@ -44,7 +45,7 @@ class Tweet extends React.Component {
                 }
             });
         } else {
-            this.setState({ error: 'Tweet cannot be empty.' });
+            this.setState({ isLoading: false, error: 'Tweet cannot be empty.' });
         }
     }
 
@@ -58,17 +59,12 @@ class Tweet extends React.Component {
         return (
             <section>
                 <ReactHelmet
-                    title="My Title"
-                    titleTemplate="MySite.com - %s"
-                    meta={[
-                        {"name": "description", "content": "Helmet application"},
-                        {"property": "og:type", "content": "article"}
-                    ]}
+                    title="Tweet - Zwitter"
                 />
 
                 <h2>Tweet to the world</h2>
 
-                { this.state.error ? <p>{ this.state.error }</p> : '' }
+                { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
 
                 <form id="form-tweet" onSubmit={ this.onSubmit.bind(this) }>
                     <div className="form-group">

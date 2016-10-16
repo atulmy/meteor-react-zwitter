@@ -1,5 +1,6 @@
-// Frontend
-// imports / startup / client / index.js
+// Imports
+
+// App
 
 // Load routes
 import './routes';

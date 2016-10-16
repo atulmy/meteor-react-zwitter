@@ -1,15 +1,8 @@
-// Frontend
-// imports / ui / components / tweet_list.jsx
-
 // Imports
-
 // Libraries
 import React from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import ReactHelmet from 'react-helmet';
 import moment from 'moment';
-
-// App
-import { Tweet } from '../../api/tweets/collection';
 
 // Tweets Component
 class Tweets extends React.Component {
@@ -43,6 +36,10 @@ class Tweets extends React.Component {
     render() {
         return (
             <section>
+                <ReactHelmet
+                    title="Tweets - Zwitter"
+                />
+
                 <h2>Tweets</h2>
 
                 { this.renderTweets() }
@@ -57,17 +54,4 @@ Tweets.propTypes = {
     tweets: React.PropTypes.array
 };
 
-// Tweets Container
-const TweetsContainer = createContainer(() => {
-    const tweetsHandle = Meteor.subscribe('tweets');
-    const tweetsLoaded = tweetsHandle.ready();
-    const tweets = Tweet.find().fetch();
-
-    return {
-        tweetsLoaded,
-        tweets
-    };
-}, Tweets);
-
-// Finally, export the Container
-export default TweetsContainer;
+export default Tweets;

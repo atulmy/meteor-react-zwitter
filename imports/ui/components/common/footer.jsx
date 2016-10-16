@@ -1,8 +1,4 @@
-// Frontend
-// imports / ui / components / footer.jsx
-
 // Imports
-
 // Libraries
 import React from 'react';
 

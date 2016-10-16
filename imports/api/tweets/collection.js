@@ -1,6 +1,5 @@
-// Shared
-// imports / api / tweets / collection.js
-
+// Imports
+// Libraries
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 

@@ -1,8 +1,8 @@
-// Backend
-// imports / api / tweets / publish.js
-
+// Imports
+// Libraries
 import { Meteor } from 'meteor/meteor';
 
+// App
 import { Tweet } from './collection';
 
 // All Tweets

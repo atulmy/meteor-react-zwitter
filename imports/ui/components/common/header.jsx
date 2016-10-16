@@ -1,8 +1,4 @@
-// Frontend
-// imports / ui / components / header.jsx
-
 // Imports
-
 // Libraries
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
@@ -30,6 +26,8 @@ class Header extends React.Component {
                 <ul className="nav nav-pills">
                     <li><Link to="/">Home</Link></li>
 
+                    <li><Link to="/about">About</Link></li>
+
                     <li><Link to="/tweet">Tweet</Link></li>
 
                     <li><a href="#" onClick={ this.logout() }>Logout</a></li>
@@ -41,6 +39,8 @@ class Header extends React.Component {
             headerLinksHtml = (
                 <ul className="nav nav-pills">
                     <li><Link to="/">Home</Link></li>
+
+                    <li><Link to="/about">About</Link></li>
 
                     <li><Link to="/login">Login</Link></li>
 

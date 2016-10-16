@@ -1,5 +1,6 @@
-// Backend
-// imports / startup / server / api.js
+// Imports
+
+// App
 
 // Tweets
 import '../../api/tweets/methods';

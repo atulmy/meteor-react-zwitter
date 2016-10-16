@@ -1,8 +1,8 @@
-// Backend
-// imports / startup / server / seeds.js
-
+// Imports
+// Libraries
 import { Accounts } from 'meteor/accounts-base';
 
+// App
 import { Tweet } from '../../api/tweets/collection';
 
 let userId = '';
