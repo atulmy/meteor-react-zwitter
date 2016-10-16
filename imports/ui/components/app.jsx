@@ -16,8 +16,7 @@ class App extends React.Component {
                     title="Zwitter"
                     meta={[
                         { "name": "description", "content": "Meteor + ReactJS Boilerplate App - Zwitter (Basic clone of Twitter)" },
-                        { "property": "og:type", "content": "website" },
-                        { "property": "og:url", "content": "http://meteor-reactjs-zwitter.demo.atulmy.com/" }
+                        { "property": "og:type", "content": "website" }
                     ]}
                 />
 

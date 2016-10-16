@@ -20,7 +20,6 @@
   "author": "Atul Yadav",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^0.8.7",
     "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
