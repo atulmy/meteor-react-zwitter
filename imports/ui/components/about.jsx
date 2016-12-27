@@ -3,8 +3,8 @@
 import React from 'react';
 import ReactHelmet from 'react-helmet';
 
-// Tweet Component
-class Tweet extends React.Component {
+// About Component
+class About extends React.Component {
 
     render() {
         return (
@@ -25,9 +25,9 @@ class Tweet extends React.Component {
 }
 
 // Contexts
-Tweet.contextTypes = {
+About.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default Tweet;
+export default About;
